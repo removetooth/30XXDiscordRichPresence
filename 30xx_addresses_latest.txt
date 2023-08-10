@@ -1,0 +1,57 @@
+{
+"motd": "Discord Rich Presence for 30XX 0.27.1 & 0.27.3\nunceremoniously thrown together by riff",
+"player_pointer_offset": 0x048ad978,
+"level_offset": 0x562c14,
+"themes_offset": 0x562c34,
+"themes": {
+	1:("Burning Temple","thumbs_bt"),
+	7:("Highvault","thumbs_hv"),
+	4:("Deepverse","thumbs_dv"),
+	2:("Echocave","thumbs_ec"),
+	8:("Clockzone","thumbs_cz"),
+	3:("Penumbra","thumbs_pu"),
+	5:("Dustria","thumbs_dt"),
+	6:("Watergrav","thumbs_ph"),
+	11:("Tutorial","thumbs_ph")
+},
+"modes_offset": 0x665784,
+"modes": {
+	0:"Standard",
+	5:"Mega Mode",
+	8:"Weekly Challenge",
+	6:"Daily Challenge"
+},
+"pl_hp_offset": 0x170,
+"pl_maxhp_offset": 0x168,
+"pl_characters_offset": 0x2bc,
+"pl_characters": {
+	0:"Nina",
+	1:"Ace"
+},
+"rpc_states": {
+	0: {
+		"in_run": 0,
+		"details": "{mode}",
+		"state": {0: "In HQ", 5: "Level Select"},
+		"large_image_key": {0: "thumbs_hq", 5: "thumbs_selection"},
+		"small_image_key": "{charthumb}",
+		"small_image_text": "{charname}"
+	},
+	-1: {
+		"in_run": 0,
+		"state": {0: "Title Screen"},
+		"large_image_key": {0: "logo"}
+	},
+	"default": {
+		"in_run": 1,
+		"details": "{mode}",
+		"state": {0: "Level {level} - {levelname}", 5: "Level {level} - {levelname}", 8: "Level {level} - {levelname}", 6: "{levelname}"},
+		"large_image_key": {0: "{levelthumb}", 5: "{levelthumb}", 8: "{levelthumb}", 6: "{levelthumb}"},
+		"large_image_text": "{levelname}",
+		"small_image_key": "{charthumb}",
+		"small_image_text": "{charname} (HP: {hp}/{maxhp})",
+		"start_timestamp": "{starttime}"
+	}
+}
+}
+
