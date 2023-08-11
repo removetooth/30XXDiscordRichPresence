@@ -89,10 +89,15 @@ if __name__ == '__main__':
 
     bytesRead = ctypes.c_ulonglong(0)
     buffer = (ctypes.c_byte * 4)()
+    buffer64 = (ctypes.c_byte * 8)()
     
     def readAddr(offset):
         ctypes.windll.kernel32.ReadProcessMemory(processHandle, ctypes.c_void_p(offset), buffer, len(buffer), ctypes.byref(bytesRead))
         return struct.unpack('i',buffer)[0]
+
+    def readAddr64(offset):
+        ctypes.windll.kernel32.ReadProcessMemory(processHandle, ctypes.c_void_p(offset), buffer64, len(buffer64), ctypes.byref(bytesRead))
+        return struct.unpack('q',buffer64)[0]
     
     def statef(string):
         if type(string) == str:
@@ -138,7 +143,7 @@ if __name__ == '__main__':
 
     print("PID: {} | Handle: {} | Base address: {}".format(pid, processHandle, hex(base_addr)))
 
-    player_addr = readAddr(base_addr+tbl["player_pointer_offset"])
+    player_addr = readAddr64(base_addr+tbl["player_pointer_offset"])
 
     discord_rpc.initialize('813814227328041010', callbacks=callbacks, log=False)
     
