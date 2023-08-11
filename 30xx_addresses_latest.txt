@@ -5,7 +5,7 @@
 	"themes_offset": 0xB26CEC,
 	"themes": {
 		1:("Burning Temple","thumbs_bt"),
-		7:("Highvault","thumbs_hv"),
+		7:("Highvault","thumbs_hv_new"),
 		4:("Deepverse","thumbs_dv"),
 		2:("Echocave","thumbs_ec"),
 		8:("Clockzone","thumbs_cz"),
