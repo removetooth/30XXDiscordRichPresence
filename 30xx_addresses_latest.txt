@@ -11,11 +11,11 @@
 		8:("Clockzone","thumbs_cz"),
 		3:("Penumbra","thumbs_pu"),
 		5:("Dustria","thumbs_dt"),
-		6:("Watergrav","thumbs_ph"),
-		12:("Aspera","thumbs_ph"),
+		6:("Watergrav","thumbs_wg"),
+		12:("Aspera","thumbs_sp"),
 		13:("Midgard","thumbs_ph"),
-		11:("Tutorial","thumbs_ph"),
-		15:("Waveform Collapse","thumbs_ph")
+		11:("Tutorial","logo"),
+		15:("Broken Asteroid","thumbs_sp")
 	},
 	"modes_offset": 0xC30F30,
 	"modes": {
@@ -43,7 +43,7 @@
 			"in_run": 0,
 			"details": "{mode}",
 			"state": {0: "In HQ", 5: "Level Select"},
-			"large_image_key": {0: "thumbs_hq", 5: "thumbs_selection"},
+			"large_image_key": {0: "thumbs_hq_new", 5: "thumbs_selection"},
 			"small_image_key": "{charthumb}",
 			"small_image_text": "{charname}"
 		},
@@ -79,7 +79,7 @@
 				13: "{levelthumb}",
 				14: "{levelthumb}",
 				15: "{levelthumb}",
-				16: "thumbs_ph"
+				16: "logo"
 				},
 			"large_image_text": "{levelname}",
 			"small_image_key": "{charthumb}",
