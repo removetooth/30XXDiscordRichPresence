@@ -1,5 +1,5 @@
 {
-	"motd": "\nDiscord Rich Presence for 30XX 1.00.5\nunceremoniously thrown together by riff\nhttps://github.com/removetooth/30XXDiscordRichPresence\n\nMostly working, but needs to be updated for 64 bit executable.\nNo player information will be shown.\n",
+	"motd": "\nDiscord Rich Presence for 30XX 1.00.5\nunceremoniously thrown together by riff\n",
 	"player_pointer_offset": 0xC332F0,
 	"level_offset": 0xB26C5C,
 	"themes_offset": 0xB26CEC,
@@ -66,7 +66,7 @@
 				13: "Level {level} - {levelname}",
 				14: "",
 				15: "Level {level} - {levelname}",
-				16: ""
+				16: "No spoilers!"
 				},
 			"large_image_key": {
 				0: "{levelthumb}",

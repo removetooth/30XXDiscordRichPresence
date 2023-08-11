@@ -1,9 +1,6 @@
 # I've moved this off to GitHub about 2 and a half years after I made it.
 # This is where it always should have been, but I didn't know it at the time.
 
-# TODO: Update this to account for the jump from 32 to 64 bit game executable!
-# Mostly still works but dynamic memory (e.g. player info) is inaccessible
-
 """ Discord Rich Presence for 30XX, revision 2 (May not work outside of Windows 10)
     Run this at the same time as 30XX to have detailed info about your game appear in your profile!
     This is a .py file, which requires Python to run. 
@@ -122,7 +119,7 @@ if __name__ == '__main__':
         'error': errorCallback,
     }
     
-    print("30XX rich presence script r2\nfetching latest addresses...")
+    print("30XX rich presence r2\nhttps://github.com/removetooth/30XXDiscordRichPresence\nfetching latest addresses from github...")
     tbl = ast.literal_eval(urllib.request.urlopen(ADDRESSES_URL).read().decode())
 
     # uncomment this for local debugging
