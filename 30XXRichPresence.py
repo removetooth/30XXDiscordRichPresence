@@ -1,5 +1,10 @@
-""" Discord Rich Presence for 30XX, revision 1 (May not work outside of Windows 10)
-    Had to make a small change because I did a stupid. Old script is broked for now. This should work fine.
+# I've moved this off to GitHub about 2 and a half years after I made it.
+# This is where it always should have been, but I didn't know it at the time.
+
+# TODO: Update this to account for the jump from 32 to 64 bit game executable!
+# Mostly still works but dynamic memory (e.g. player info) is inaccessible
+
+""" Discord Rich Presence for 30XX, revision 2 (May not work outside of Windows 10)
     Run this at the same time as 30XX to have detailed info about your game appear in your profile!
     This is a .py file, which requires Python to run. 
     You can download & install Python from python.org or simply by typing "python" into command prompt.
@@ -34,6 +39,8 @@ then, while 30XX is open, try running this again!""")
     sys.exit()
 
 if __name__ == '__main__':
+
+    ADDRESSES_URL = "https://raw.githubusercontent.com/removetooth/30XXDiscordRichPresence/main/30xx_addresses_latest.txt"
 
     class MODULEENTRY32(ctypes.Structure):
         _fields_ = [("dwSize", ctypes.c_long),
@@ -110,8 +117,12 @@ if __name__ == '__main__':
         'error': errorCallback,
     }
     
-    print("30XX rich presence script r1\nfetching latest addresses...")
-    tbl = ast.literal_eval(urllib.request.urlopen("http://69.164.206.130:3069/").read().decode())
+    print("30XX rich presence script r2\nfetching latest addresses...")
+    tbl = ast.literal_eval(urllib.request.urlopen(ADDRESSES_URL).read().decode())
+
+    # uncomment this for local debugging
+    #tbl = ast.literal_eval(open('30xx_addresses_latest.txt', 'r').read())
+
     print(tbl["motd"])
 
     try:
@@ -128,7 +139,7 @@ if __name__ == '__main__':
     print("PID: {} | Handle: {} | Base address: {}".format(pid, processHandle, hex(base_addr)))
 
     player_addr = readAddr(base_addr+tbl["player_pointer_offset"])
-    
+
     discord_rpc.initialize('813814227328041010', callbacks=callbacks, log=False)
     
     runstarted = 0
@@ -142,8 +153,8 @@ if __name__ == '__main__':
         levelthumb = tbl["themes"].get(readAddr(base_addr+tbl["themes_offset"]),["???","thumbs_ph"])[1]
         charname = tbl["pl_characters"].get(readAddr(player_addr+tbl["pl_characters_offset"]),"???")
         charthumb = charname.lower()
-        hp = str(int(readAddr(player_addr+tbl["pl_hp_offset"])/1000))
-        maxhp = str(int(readAddr(player_addr+tbl["pl_maxhp_offset"])/1000))
+        hp = str(int(readAddr(player_addr+tbl["pl_hp_offset"])/100))
+        maxhp = str(int(readAddr(player_addr+tbl["pl_maxhp_offset"])/100))
 
         rpc_state = tbl["rpc_states"].get(level, tbl["rpc_states"]["default"])
         
@@ -173,6 +184,7 @@ if __name__ == '__main__':
         discord_rpc.update_connection()
         time.sleep(1)
         discord_rpc.run_callbacks()
+        #print(rpc_out)
         
     print("30XX no longer running, disconnecting")
     ctypes.windll.kernel32.CloseHandle(processHandle)
