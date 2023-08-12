@@ -1,5 +1,5 @@
 {
-	"motd": "\nDiscord Rich Presence for 30XX 1.00.5 & 1.00.6\nunceremoniously thrown together by riff\n",
+	"motd": "\nDiscord Rich Presence for 30XX 1.00.5 thru 1.00.7\nunceremoniously thrown together by riff\naddresses have been pretty static lately- might not update version number until they shuffle around again",
 	"player_pointer_offset": 0xC332F0,
 	"level_offset": 0xB26C5C,
 	"themes_offset": 0xB26CEC,
