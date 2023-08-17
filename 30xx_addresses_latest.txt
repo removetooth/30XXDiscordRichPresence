@@ -1,8 +1,8 @@
 {
-	"motd": "\nDiscord Rich Presence for 30XX 1.00.9\nunceremoniously thrown together by riff\n",
-	"player_pointer_offset": 0xC35310,
-	"level_offset": 0xB28C5C,
-	"themes_offset": 0xB28CEC,
+	"motd": "\nDiscord Rich Presence for 30XX 1.00.10\nunceremoniously thrown together by riff\n",
+	"player_pointer_offset": 0xC37300,
+	"level_offset": 0xB2ACE8,
+	"themes_offset": 0xB2ACF0,
 	"themes": {
 		1:("Burning Temple","thumbs_bt"),
 		7:("Highvault","thumbs_hv_new"),
@@ -17,7 +17,7 @@
 		11:("Tutorial","logo"),
 		15:("Broken Asteroid","thumbs_sp")
 	},
-	"modes_offset": 0xC32F50,
+	"modes_offset": 0xC34F40,
 	"modes": {
 		0:"Standard",
 		5:"Mega Mode",
