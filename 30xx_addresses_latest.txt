@@ -1,6 +1,6 @@
 {
-	"motd": "\nDiscord Rich Presence for 30XX 1.00.15\nunceremoniously thrown together by riff\nsorry for the lapse in updates! hopefully hotfixes slow down soon\n",
-	"player_pointer_offset": 0xC3D2B8,
+	"motd": "\nDiscord Rich Presence for 30XX 1.00.16\nunceremoniously thrown together by riff\nsorry for the lapse in updates!\n",
+	"player_pointer_offset": 0xC3D288,
 	"level_offset": 0xB30D1C,
 	"themes_offset": 0xB30D24,
 	"themes": {
@@ -17,7 +17,7 @@
 		11:("Tutorial","logo"),
 		15:("Broken Asteroid","thumbs_sp")
 	},
-	"modes_offset": 0xC3D10C,
+	"modes_offset": 0xC3D0FC,
 	"modes": {
 		0:"Standard",
 		5:"Mega Mode",
